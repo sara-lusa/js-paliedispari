@@ -54,14 +54,14 @@
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
 
-// L'utente sceglie un pari o Dispari
+// L'utente sceglie un pari o Dispari + validazione
 var utentePariDisp = (prompt('Scegli pari o dispari.')).toLowerCase();
 
 while ( utentePariDisp == '' || utentePariDisp != 'pari' && utentePariDisp != 'dispari' ) {
   utentePariDisp = (prompt('Errore. Scegli pari o dispari.')).toLowerCase();
 }
 
-// L'utente inserisce un numero da 1 a 5
+// L'utente inserisce un numero da 1 a 5 + validazione
 var utenteNumero = parseInt(prompt('Scegli un numero tra 1 e 5.'));
 
 while ( utenteNumero < 1 || utenteNumero > 5 || isNaN(utenteNumero) ) {
@@ -70,13 +70,13 @@ while ( utenteNumero < 1 || utenteNumero > 5 || isNaN(utenteNumero) ) {
 
 // Creiamo una funzione
 function giocoPariODispari(argPariDispari, argNumero) {
-  // Generiamo un numero parolaPalindroma
+  // Generiamo un numero random
   var computerNumero = Math.floor(Math.random() * 5) +1;
 
-  // Sommiamo i numeri
+  // Sommiamo i numeri dell'utente e del computer
   var somma = argNumero + computerNumero;
 
-  // pari o Dispari
+  // Constatiamo se sono pari o Dispari
   var vincitoreUtente = false;
   if ( (argPariDispari == 'pari' && somma % 2 == 0) || (argPariDispari == 'dispari' && somma % 2 != 0) ) {
     vincitoreUtente = true;
